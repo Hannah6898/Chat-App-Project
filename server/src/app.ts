@@ -4,6 +4,8 @@ import {Server} from 'socket.io'
 import cors from 'cors'
 import config from 'config'
 //Allows you to create json files
+import logger from '../utils/logger';
+import {version} from "../package.json";
 
 const port = config.get<number>("port");
 const host = config.get<string>("host");
@@ -24,4 +26,7 @@ app.get('/', (req,res)=>{
 res.send('Hello');
 });
 
-httpServer.listen(port, host,()=> console.log('Server is listening'))
+httpServer.listen(port, host,()=> {
+    logger.info(`🚀 Server version ${version} is listening 🚀`)
+    logger.info(`http://${host}:${port}`)
+});
