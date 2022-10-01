@@ -6,6 +6,7 @@ import config from 'config'
 //Allows you to create json files
 import logger from '../utils/logger';
 import {version} from "../package.json";
+import socket from './socket'
 
 const port = config.get<number>("port");
 const host = config.get<string>("host");
@@ -29,4 +30,5 @@ res.send('Hello');
 httpServer.listen(port, host,()=> {
     logger.info(`🚀 Server version ${version} is listening 🚀`)
     logger.info(`http://${host}:${port}`)
+    socket({io});
 });
