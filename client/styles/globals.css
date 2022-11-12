@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
