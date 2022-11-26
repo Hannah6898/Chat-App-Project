@@ -47,23 +47,25 @@ function MessagesContainer() {
           return (
             <div key={index} className={styles.message}>
               <div key={index} className={styles.messageInner}>
-                <span className={styles.messageSender}>
-                  {username} - {time}
-                </span>
+                <span className={styles.messageSender}>{username} -</span>
                 <span className={styles.messageBody}>{message}</span>
+                <div className={styles.date}>
+                  <span>{time}</span>
+                </div>
               </div>
             </div>
           );
         })}
+
         <div ref={messageEndRef} />
-        <div className={styles.messageBox}>
-          <textarea
-            rows={1}
-            placeholder="Type a message"
-            ref={newMessageRef}
-          ></textarea>
-          <button onClick={handleSendMessage}>Send</button>
-        </div>
+      </div>
+      <div className={styles.messageBox}>
+        <textarea
+          rows={1}
+          placeholder="Type a message"
+          ref={newMessageRef}
+        ></textarea>
+        <button onClick={handleSendMessage}>Send</button>
       </div>
     </div>
   );
