@@ -43,6 +43,7 @@
 
   .usernameInner input{
     border: none;
+    background-color:  #f2f4f7
   }
 
 .usernameInner input,
@@ -54,5 +55,6 @@
 
 .usernameInner button {
   margin-left: 1rem;
-  border: 1px, #24BFA5, solid;
+  border: 2px solid #31CAA5;
+  background-color:  #f2f4f7
 }
