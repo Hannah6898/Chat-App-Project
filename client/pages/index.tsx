@@ -11,6 +11,7 @@ export default function Home() {
   const { socket, username, setUsername } = useSockets();
   const usernameRef = useRef(null);
 
+  //Function to set the Username of the user and save it in local storage 
   function handleSetUsername() {
     const value = usernameRef.current.value;
     if (!value) {
@@ -20,11 +21,11 @@ export default function Home() {
     localStorage.setItem("username", value);
   }
 
-  useEffect(() => {
-    if (usernameRef) {
-      usernameRef.current.value = localStorage.getItem("username") || "";
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (usernameRef) {
+  //     usernameRef.current.value = localStorage.getItem("username") || "";
+  //   }
+  // }, []);
 
   return (
     <div>
